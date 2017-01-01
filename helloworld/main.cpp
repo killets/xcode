@@ -22,11 +22,11 @@ void key_indexed_counting(vector<int>& arr, int R){
 
 
 
-//int main(){
-//    vector<int> arr{0,2,1,2,1,0,1};
-//    key_indexed_counting(arr,3);
-//    for(auto e: arr)
-//        cout<<e<<" ";
-//    
-//    return 0;
-//}
+int main(){
+    vector<int> arr{0,2,1,2,1,0,1};
+    key_indexed_counting(arr,3);
+    for(auto e: arr)
+        cout<<e<<" ";
+    
+    return 0;
+}

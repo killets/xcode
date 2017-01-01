@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD8D73781DBCDBAE00ABA375 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD8D73771DBCDBAE00ABA375 /* main.cpp */; };
-		CDD064A41E01CA1A00F310C3 /* brute_force_substring_search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDD064A31E01CA1A00F310C3 /* brute_force_substring_search.cpp */; };
-		CDD064A61E01CED200F310C3 /* knuth_morris_pratt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDD064A51E01CED200F310C3 /* knuth_morris_pratt.cpp */; };
-		CDE469F91E033458001405B5 /* boyer_moore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE469F81E033458001405B5 /* boyer_moore.cpp */; };
+		CD1A3DAF1E198652003D0B8B /* brute_force_substring_search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDD064A31E01CA1A00F310C3 /* brute_force_substring_search.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD1A3DAB1E19849C003D0B8B /* shortestencoding.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shortestencoding.cpp; sourceTree = "<group>"; };
 		CD8D73741DBCDBAE00ABA375 /* helloworld */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = helloworld; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8D73771DBCDBAE00ABA375 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CDD064A31E01CA1A00F310C3 /* brute_force_substring_search.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = brute_force_substring_search.cpp; sourceTree = "<group>"; };
@@ -67,6 +65,7 @@
 				CDD064A31E01CA1A00F310C3 /* brute_force_substring_search.cpp */,
 				CDD064A51E01CED200F310C3 /* knuth_morris_pratt.cpp */,
 				CDE469F81E033458001405B5 /* boyer_moore.cpp */,
+				CD1A3DAB1E19849C003D0B8B /* shortestencoding.cpp */,
 			);
 			path = helloworld;
 			sourceTree = "<group>";
@@ -128,10 +127,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDD064A41E01CA1A00F310C3 /* brute_force_substring_search.cpp in Sources */,
-				CD8D73781DBCDBAE00ABA375 /* main.cpp in Sources */,
-				CDE469F91E033458001405B5 /* boyer_moore.cpp in Sources */,
-				CDD064A61E01CED200F310C3 /* knuth_morris_pratt.cpp in Sources */,
+				CD1A3DAF1E198652003D0B8B /* brute_force_substring_search.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

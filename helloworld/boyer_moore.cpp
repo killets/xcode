@@ -50,49 +50,6 @@ public:
     }
 };
 
-class Solution {
-private:
-    vector<int> get_z(string s){
-        int n = s.length();
-        vector<int> z(n);
-        vector<int> res;
-        int L = 0, R = 0;
-        for (int i = 1; i < n; i++) {
-            if (i > R) {
-                L = R = i;
-                while (R < n && s[R-L] == s[R]) R++;
-                z[i] = R-L; R--;
-            } else {
-                int k = i-L;
-                if (z[k] < R-i+1) z[i] = z[k];
-                else {
-                    L = i;
-                    while (R < n && s[R-L] == s[R]) R++;
-                    z[i] = R-L; R--;
-                }
-            }
-            if(z[i]>=i) res.push_back(i);
-        }
-        return z;
-    }
-    
-public:
-    string encode(string s) {
-        int n = s.length();
-        vector<string> dp(n+1, "");
-        
-        for(int i=1; i<=n; i++){
-            //1' not taken
-            //dp[i] =  string(1, s[n-i]) + dp[i-1];
-            
-            //2' taken
-            vector<int> p = get_z(s.substr(i));
-            for(auto x : p)
-                cout<<x;
-        }
-        return "";
-    }
-};
 int main2() {
     string txt = "abababababcde";
     Boyer_Moore k("ababcde");
@@ -101,24 +58,13 @@ int main2() {
     
 }
 
-
 int main() {
     
-//    string txt = "From 1820 to 1850, Jacksonian democracy began a set of reforms which included wider white male suffrage; it led to the rise of the Second Party System of Democrats and Whigs as the dominant parties from 1828 to 1854.";
-//    Boyer_Moore k("white");
-//    int i =k.search(txt);
-//    cout<< i<<endl;
-//    cout<< txt.substr(i, 10)<<endl;
-    
-
-    cout<<"hi"<<endl;
-   
-    Solution slu;
-//    unordered_set<string> wordList({"hot","dot","dog","lot","log"});
-//    auto res = slu.findLadders("hit", "cog", wordList);
-  
-    vector<int> nums({1,2,31,33});
-    slu.encode("aaaaa");
+    string txt = "From 1820 to 1850, Jacksonian democracy began a set of reforms which included wider white male suffrage; it led to the rise of the Second Party System of Democrats and Whigs as the dominant parties from 1828 to 1854.";
+    Boyer_Moore k("white");
+    int i =k.search(txt);
+    cout<< i<<endl;
+    cout<< txt.substr(i, 10)<<endl;
     return 0;
 }
 

@@ -41,13 +41,13 @@ int search_v2(string txt, string pat){
 }
 
 
-//void test(){
-//    string txt = "abcabcdefabcde";
-//    cout<<search(txt, "abcd")<<endl;
-//    cout<<search_v2(txt, "abcd")<<endl;
-//}
-//
-//int main(){
-//    test();
-//    return 0;
-//}
+void test(){
+    string txt = "abcabcdefabcde";
+    cout<<search(txt, "abcd")<<endl;
+    cout<<search_v2(txt, "abcd")<<endl;
+}
+
+int main(){
+    test();
+    return 0;
+}

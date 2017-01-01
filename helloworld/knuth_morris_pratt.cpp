@@ -60,7 +60,7 @@ public:
 };
 
 
-/*
+
 int main2() {
     string txt = "abababababcde";
     KMP k("ababcde");
@@ -83,7 +83,6 @@ int main() {
     
 }
 
-*/
 
 // only on pat
 // 自己写的，思路比较复杂，不如algs4清晰，建议抛弃
