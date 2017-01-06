@@ -54,7 +54,15 @@ public:
             else freq[1].first = tmp;
         } else{
             auto tmp = m[key];
-            if(freq.find(tmp->val +1)!=freq.end() || freq[tmp->val].second!=tmp){ // 也可以不用放在头部，只管放到原freq自己的头部即可
+            auto oldnext = tmp->next;
+            
+            if(freq[tmp->val].second==tmp){ // I am head
+                if(tmp->pre->val == tmp->val){
+                    freq[tmp->val].second = tmp->pre;
+                } else
+                    freq.erase(tmp->val);
+                freq[tmp->val +1].first = tmp;
+            } else{ // if(freq.find(tmp->val +1)!=freq.end() || freq[tmp->val].second!=tmp){ // 也可以不用放在头部，只管放到原freq自己的头部即可
                 tmp->pre->next = tmp->next;
                 tmp->next->pre = tmp->pre;
                 auto front = freq.find(tmp->val +1)!=freq.end() ? freq[tmp->val +1].second : freq[tmp->val].second;
@@ -62,13 +70,12 @@ public:
                 tmp->next = front->next;
                 front->next = tmp;
                 tmp->next->pre = tmp;
-            } else if(freq[tmp->val].second==tmp){
-                if(tmp->pre->val == tmp->val){
-                    freq[tmp->val].second = tmp->pre;
-                } else
-                    freq.erase(tmp->val);
-                freq[tmp->val +1].first = tmp;
+                // Note! first not set
+                if(freq[tmp->val].first == tmp)
+                    freq[tmp->val].first = oldnext;
             }
+            //Note! first not set
+            if(freq.find(tmp->val+1)==freq.end()) freq[tmp->val+1].first = tmp;
             freq[tmp->val + 1].second = tmp;
             tmp->val++;
         }
@@ -126,14 +133,6 @@ public:
     }
 };
 
-/**
- * Your AllOne object will be instantiated and called as such:
- * AllOne obj = new AllOne();
- * obj.inc(key);
- * obj.dec(key);
- * string param_3 = obj.getMaxKey();
- * string param_4 = obj.getMinKey();
- */
 
 
 
