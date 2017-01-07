@@ -56,12 +56,13 @@ public:
             auto tmp = m[key];
             auto oldnext = tmp->next;
             
-            if(freq[tmp->val].second==tmp){ // I am head
+            if(freq[tmp->val].second==tmp && (freq.find(tmp->val +1)==freq.end())){ // I am head && freq+1 not exist
                 if(tmp->pre->val == tmp->val){
                     freq[tmp->val].second = tmp->pre;
                 } else
                     freq.erase(tmp->val);
                 freq[tmp->val +1].first = tmp;
+                //freq[tmp->val+1].second;
             } else{ // if(freq.find(tmp->val +1)!=freq.end() || freq[tmp->val].second!=tmp){ // 也可以不用放在头部，只管放到原freq自己的头部即可
                 tmp->pre->next = tmp->next;
                 tmp->next->pre = tmp->pre;
@@ -147,14 +148,18 @@ public:
 
 int main(){
     AllOne obj;
-    obj.inc("hello");
-     obj.inc("hi");
-     obj.inc("hi");
-    obj.dec("hello");
-    obj.inc("nihao");
-    obj.inc("hix");
-    obj.dec("hi");
-    cout<<obj.getMaxKey()<<endl;
+    obj.inc("a");
+     obj.inc("b");
+     obj.inc("c");
+    obj.inc("d");
+    obj.inc("a");
+    obj.inc("b");
+    obj.inc("c");
+    obj.inc("d");
+    obj.inc("c");
+    obj.inc("d");
+    obj.inc("d");
+    obj.inc("a");
     cout<<obj.getMinKey()<<endl;
     
     
